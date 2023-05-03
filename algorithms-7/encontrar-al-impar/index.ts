@@ -17,5 +17,5 @@ export default function encontrarImpar(numeros: number[]): number {
     if(registrados[num] % 2 !== 0) result = num
   }
 
-  return parseInt(result)
+  return Number(result)
 }
