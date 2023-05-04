@@ -1,21 +1,13 @@
 export default function encontrarImpar(numeros: number[]): number {
-  let registrados = {}
-  let result;
+  let registrados = new Set<number>()
 
-  for(let num of numeros){
-    if(registrados[num]){
-      registrados[num]++
+  for(const num of numeros){
+    if(registrados.has(num)){
+      registrados.delete(num)
     } else {
-      registrados[num] = 1
+      registrados.add(num)
     }
   }
 
-  console.log(registrados);
-  
-
-  for(let num in registrados){    
-    if(registrados[num] % 2 !== 0) result = num
-  }
-
-  return Number(result)
+  return Array.from(registrados)[0]
 }
