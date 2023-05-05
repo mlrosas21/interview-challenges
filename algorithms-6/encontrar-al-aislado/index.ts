@@ -1,4 +1,6 @@
 export default function buscarAislado(numeros: number[]): number {
-  // TODO: implementar
-  return 0;
+  let impares: number[] = numeros.filter(e => e % 2 !== 0)
+  let pares: number[] = numeros.filter(e => e % 2 === 0)
+
+  return impares.length > pares.length ? pares[0] : impares[0]
 }
